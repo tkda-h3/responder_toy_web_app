@@ -5,7 +5,7 @@ api = responder.API()
 
 
 @api.route('/hello/{who}/html')
-def hello(req: Request, resp: Response, *, who: str):
+async def hello(req: Request, resp: Response, *, who: str):
     # templatesディレクトリに配置
     resp.html = api.template('hello.html', who=who)
 
